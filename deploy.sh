@@ -126,10 +126,10 @@ fi
 if [ "${HELM_ACTION}" == "install" ]; then
 
     if [ -n "${USE_SECRETS_VALS}" ]; then
-      HELM_COMMAND="helm secrets --backend vals --evaluate-templates true upgrade --install --create-namespace --timeout ${TIMEOUT}  ${HELM_AUTH}"
+      HELM_COMMAND="helm secrets --backend vals --evaluate-templates true upgrade --install --timeout ${TIMEOUT}  ${HELM_AUTH}"
     else
       # Upgrade or install the chart.  This does it all.
-      HELM_COMMAND="helm upgrade --install --create-namespace --timeout ${TIMEOUT}  ${HELM_AUTH}"
+      HELM_COMMAND="helm upgrade --install --timeout ${TIMEOUT}  ${HELM_AUTH}"
     fi
 
     # If we should wait, then do so
